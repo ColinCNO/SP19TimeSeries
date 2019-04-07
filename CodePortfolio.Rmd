@@ -19,5 +19,17 @@ When you click the **Knit** button a document will be generated that includes bo
 ##Importing Data
 dat <- read.csv("income.csv", header = TRUE)
 
-##Some Test Comments
-###Some more test Comments
+##Time Series
+# Convert data_vector to a ts object with start = 2004 and frequency = 4
+time_series <- ts(data_vector, start = 2004, frequency = 4)
+print(time_series)
+plot(time_series)
+
+# Check if Time Series
+is.ts(Nile)
+
+# US TS Plot and add a legend
+ts.plot(EuStockMarkets, col = 1:4, xlab = "Year", ylab = "Index Value", main = "Major European Stock Indices, 1991-1998")
+legend("topleft", colnames(EuStockMarkets), lty = 1, col = 1:4, bty = "n")
+
+
